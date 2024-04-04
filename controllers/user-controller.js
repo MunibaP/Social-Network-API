@@ -1,28 +1,28 @@
 const { User} = require('../models');
 
 const userController = {
-    // get all users
+    // Function to GET all users
     getAllUsers(req, res) {
         User.find({})
             .then(userData => res.json(userData))
             .catch(err => res.status(500).json(err));
     },
 
-    // get one user by id
+    // Function to GET user by id
     getUserById(req, res) {
         User.findById(req.params.userId)
             .then(userData => res.json(userData))
             .catch(err => res.status(500).json(err));
     },
 
-    // create User
+    // Function to CREATE a User
     createUser(req, res) {
         User.create(req.body)
             .then(userData => res.json(userData))
             .catch(err => res.status(500).json(err));
     },
 
-    // update user by id
+    // Function to UPDATE user by id
     updateUserById(req, res) {
         User.findOneAndUpdate(req.params.id, req.body, { new: true})
             .then(userData => {
@@ -34,7 +34,7 @@ const userController = {
             .catch(err => res.status(500).json(err));
     },
 
-    // delete user
+    // Function to DELETE user
     deleteUserById(req, res) {
         User.findOneAndDelete(req.params.id)
             .then(userData => {
@@ -46,7 +46,7 @@ const userController = {
             .catch(err => res.status(500).json(err));
     },
 
-    // add friend
+    // Function to add (POST) friend
     addFriend(req, res) {
         User.findOneAndUpdate(
           { _id: req.params.userId },
@@ -62,7 +62,7 @@ const userController = {
         .catch(err => res.status(500).json(err));
     },
 
-    // remove friend
+    // Function to remove (DELETE) friend
     removeFriend({ params }, res) {
         User.findOneAndUpdate({ _id: params.userId }, { $pull: {friends: params.friendId}}, {new: true})
         .then((userData) => {
