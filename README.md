@@ -86,7 +86,7 @@ To clone: git clone https://github.com/your-username/repository-name.git
     - Testing API POST and DELETE routes in Insomnia Core are able to successfully create and delete reactions to thoughts and add and remove friends to a user’s friend list.
 
 ## Screenshot
-![Social Network API_terminal](/assets/noSQL_terminal.png)
+![Social Network API_terminal](/assets/noSQL_terminal_1.png)
 
 ![Social Network API_insomnia](assets/noSQL_insomnia.png)
 
