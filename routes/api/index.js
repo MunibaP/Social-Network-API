@@ -5,7 +5,7 @@ const router = require('express').Router();
 const userRoutes = require('./user-routes');
 const thoughtRoutes = require('./thought-routes');
 
-// Defining endpoints for users & thoughts routes
+// Added endpoints for users & thoughts routes
 router.use('/users', userRoutes);
 router.use('/thoughts', thoughtRoutes);
 
